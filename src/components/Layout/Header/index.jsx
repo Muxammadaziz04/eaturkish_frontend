@@ -9,13 +9,13 @@ const Header = () => {
     const navigate = useNavigate()
 
     const handleClick = () => {
-        navigate('/login', {replace: true})
+        navigate('/login')
     }
 
     return (
         <nav className={style.nav}>
             <div className={style.nav__block + ' container'}>
-                <Link to="/home" className={style.nav__logo}>
+                <Link to="/" className={style.nav__logo}>
                     <img src={Logo} alt="logo" />
                 </Link>
 
