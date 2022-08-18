@@ -26,7 +26,7 @@ const Footer = () => {
                 <div className={style.footer__contacts}>
                     <div className={style.footer__contacts__card}>
                         <h5>Contact Us</h5>
-                        <a href="https://g.page/EaTurkishLondon?share" target='_blank'>9 W 53rd St, London, NY 10019, UK</a>
+                        <a href="https://g.page/EaTurkishLondon?share" target='_blank' rel="noreferrer">9 W 53rd St, London, NY 10019, UK</a>
                         <a href="tel:+12123441230">+1 212-344-1230</a>
                         <a href="tel:+12125551230">+1 212-555-1230</a>
                     </div>
