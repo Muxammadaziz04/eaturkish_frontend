@@ -1,6 +1,6 @@
 import React from 'react';
 
-import insta_icon from '../../../../assets/insta_icon__photo.svg'
+import insta_icon from '../../../assets/insta_icon__photo.svg'
 
 import style from './PhotoCard.module.scss'
 
