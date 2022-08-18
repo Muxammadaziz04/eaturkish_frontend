@@ -1,6 +1,6 @@
 import React from 'react';
 
-import arrow from '../../../assets/arow.svg'
+import arrow from '../../assets/arow.svg'
 import PhotoCard from './PhotoCard';
 
 import style from './PhotosSection.module.scss'
