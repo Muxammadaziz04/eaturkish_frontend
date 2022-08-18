@@ -1,5 +1,4 @@
 import React from 'react';
-import Filter from '../components/Menu/Filter';
 import MenuSection from '../components/Menu/MenuSection';
 import PhotosSection from '../components/PhotosSection';
 

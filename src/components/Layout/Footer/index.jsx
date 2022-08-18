@@ -36,17 +36,17 @@ const Footer = () => {
                         <p>"The best way to find yourself is to lose yourself in the service of others.”</p>
                         <ul>
                             <li>
-                                <a href="https://www.facebook.com/eaturkishlondon/" target={'_blank'}>
+                                <a href="https://www.facebook.com/eaturkishlondon/" target={'_blank'} rel="noreferrer">
                                     <img src={Fb_icon} alt="Social media link" />
                                 </a>
                             </li>
                             <li>
-                                <a href="https://mobile.twitter.com/eaturkishlondon" target={'_blank'}>
+                                <a href="https://mobile.twitter.com/eaturkishlondon" target={'_blank'} rel="noreferrer">
                                     <img src={Tw_icon} alt="Social media link" />
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/eaturkish/" target={'_blank'}>
+                                <a href="https://www.instagram.com/eaturkish/" target={'_blank'} rel="noreferrer">
                                     <img src={Insta_icon} alt="Social media link" />
                                 </a>
                             </li>

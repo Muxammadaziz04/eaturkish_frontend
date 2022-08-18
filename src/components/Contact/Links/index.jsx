@@ -21,7 +21,7 @@ const Links = () => {
         <div className={style.contacts}>
             {
                 contacts.length > 0 && contacts.map((ctc, index) => (
-                    <a href={ctc.link} className={style.contact__item} key={index}>
+                    <a href={ctc.link} className={style.contact__item} target='_blank' rel="noreferrer" key={index}>
                         <div className={style.contact__icon}>
                             <img src={ctc.icon} alt="icon" />
                         </div>

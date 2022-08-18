@@ -1,7 +1,5 @@
 import React from 'react';
 
-import poster from '../../../assets/Video__placeholder.png'
-
 const VideoSection = () => {
     return (
         <iframe 
