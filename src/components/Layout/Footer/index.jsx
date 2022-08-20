@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import Logo from '../../../assets/footer_logo.png'
 import Fb_icon from '../../../assets/fb_icon.svg'
 import Tw_icon from '../../../assets/twiter_icon.svg'
 import Insta_icon from '../../../assets/insta_icon.svg'
 
+import { host } from '../../../constants'
+
 import style from './Footer.module.scss'
 
 const Footer = () => {
+    const inpRef = useRef()
+
+    const sendEmail = async (event) => {
+        event.preventDefault()
+        const options = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ subscriber_email: inpRef.current.value.trim() })
+        }
+        
+        let res = await fetch(`${host}/subscriber`, options)
+        res = await res.json()
+        
+        alert(res?.status === 201 ? 'Thank you for subscribe' : res.error || 'somethink went wrong')
+    }
+
     return (
         <footer className={style.footer}>
             <div className={style.footer__agg}></div>
@@ -17,8 +37,8 @@ const Footer = () => {
                     <h3 className={style.footer__card__title}>Newsletter</h3>
                     <h2 className={style.footer__card__subtitle}>Subscribe to Our Newsletter</h2>
                     <p className={style.footer__card__desc}>And never miss latest Updates!</p>
-                    <form className={style.footer__card__form}>
-                        <input type="email" placeholder='Email Address' />
+                    <form className={style.footer__card__form} onSubmit={sendEmail}>
+                        <input type="email" placeholder='Email Address' ref={inpRef} />
                         <button type='submit'>Subscribe</button>
                     </form>
                 </div>

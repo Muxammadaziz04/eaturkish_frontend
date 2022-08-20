@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import arrow from '../../../assets/arow.svg'
 import CommentItem from './CommentItem';
+import { host } from '../../../constants';
 
 import style from './TestimonySection.module.scss'
 
 const TestimonySection = () => {
+    const [messages, setMessages] = useState([])
+    const [page, setPage] = useState(1)
+
+    // const changePage = () => {
+    //     setPage(state => state + 1)
+    // }
+
+    useEffect(() => {
+        fetch(`${host}/messages?page=${page}`)
+            .then(res => res.json())
+            .then(res => setMessages(res.data))
+            .catch(err => alert(err))
+    }, [page]);
+
     return (
         <section className={style.section}>
             <div className={style.section__block + ' container'}>
@@ -17,9 +32,9 @@ const TestimonySection = () => {
                 <h2 className={style.section__name}>Happy customers</h2>
 
                 <div className={style.section__cards__block}>
-                    <CommentItem />
-                    <CommentItem />
-                    <CommentItem />
+                {
+                        messages?.length > 0 && messages.map(message => <CommentItem message={message} key={message.message_id} />)
+                    }
                 </div>
             </div>
         </section>

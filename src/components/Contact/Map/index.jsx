@@ -7,7 +7,7 @@ const Map = () => {
             width="100%"
             title='map'
             style={{ "border": "none", "aspectRatio": "16/9" }}
-            allowFullScreen="true"
+            allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
         ></iframe>

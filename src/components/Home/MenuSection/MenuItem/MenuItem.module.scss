@@ -9,6 +9,13 @@
     letter-spacing: 0.05em;
     text-transform: capitalize;
     white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover{
+        color: white;
+        background: #BB2339;
+    }
 }
 
 .item{

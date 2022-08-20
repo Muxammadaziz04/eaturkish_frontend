@@ -3,6 +3,7 @@
     padding: 50px 40px;
     background: #BB2339;
     border-radius: 20px;
+    transition: all 0.3s;
 
     &__name{
         font-family: 'Cera Round Pro';
@@ -26,6 +27,12 @@
         background: inherit;
         border-radius: 100px;
         margin-bottom: 20px;
+        transition: all 0.3s;
+
+        &:hover{
+            color: #BB2339;
+            background: white;
+        }
 
         &:last-child{
             margin-bottom: 0;

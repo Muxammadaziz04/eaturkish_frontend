@@ -1,15 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import MenuCard from '../../MenuCard'
 
 import left_arrow from '../../../assets/Left_arrow.svg'
 import right_arrow from '../../../assets/right_arrow.svg'
+import { host } from '../../../constants';
 
 import style from './DishesSection.module.scss'
 
 const DishesSection = () => {
+    const [menu, setMenu] = useState([])
     const cardsRef = useRef()
-    
+
     const handleClick = (direction) => {
         const scrollLeft = cardsRef.current.scrollLeft
         const scrollWidth = cardsRef.current.clientWidth
@@ -21,6 +23,13 @@ const DishesSection = () => {
             behavior: 'smooth'
         })
     }
+
+    useEffect(() => {
+        fetch(`${host}/popularfoods`)
+            .then(res => res.json())
+            .then(res => setMenu(res.data))
+            .catch(err => alert(err))
+    }, [host]);
 
     return (
         <section className={style.section}>
@@ -39,15 +48,9 @@ const DishesSection = () => {
                 </div>
 
                 <div className={style.section__cards__block} ref={cardsRef}>
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
+                    {
+                        menu?.length > 0 && menu.map(menu => <MenuCard menu={menu} stars={true} key={menu.food_id} />)
+                    }
                 </div>
             </div>
         </section>

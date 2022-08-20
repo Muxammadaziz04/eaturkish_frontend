@@ -2,9 +2,9 @@ import React from 'react';
 
 import style from './MenuItem.module.scss'
 
-const MenuItem = ({text}) => {
+const MenuItem = ({text, handleClick}) => {
     return (
-        <div className={style.item}>
+        <div className={style.item} onClick={handleClick}>
             {text}
         </div>
     );
