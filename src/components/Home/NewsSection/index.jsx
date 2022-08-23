@@ -16,7 +16,7 @@ const NewsSection = () => {
     }
 
     useEffect(() => {
-        fetch(`${host}/news?limit=3`)
+        fetch(`${host}/news?limit=3&page=1`)
             .then(res => res.json())
             .then(res => setNews(res.data))
             .catch(err => alert(err))

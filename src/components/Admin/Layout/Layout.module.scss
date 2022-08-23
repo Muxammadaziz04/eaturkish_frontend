@@ -6,7 +6,7 @@
     display: flex;
 
     &__nav{
-        width: 243px;
+        min-width: 243px;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -53,5 +53,9 @@
             background: #007AFF;
             border-left: 3px solid white;
         }
+    }
+
+    &__container{
+        flex-grow: 1;
     }
 }

@@ -15,7 +15,7 @@ const TestimonySection = () => {
     // }
 
     useEffect(() => {
-        fetch(`${host}/messages?page=${page}`)
+        fetch(`${host}/messages?page=${page}&limit=3`)
             .then(res => res.json())
             .then(res => setMessages(res.data))
             .catch(err => alert(err))

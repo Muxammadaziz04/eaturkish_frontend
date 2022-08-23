@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import adminLogo from '../../../assets/admin.svg'
 import menuIcon from '../../../assets/server.svg'
@@ -6,8 +6,16 @@ import newsIcon from '../../../assets/settings.svg'
 import messagesIcon from '../../../assets/plus-circle.svg'
 
 import style from './Layout.module.scss'
+import Item from '../FoodItem';
+import PostItem from '../NewsItem';
+import News from '../News';
+import Foods from '../Foods';
+import FoodUpload from '../FoodUpload';
+import NewsUpload from '../NewsUpload';
+import { Link, Outlet } from 'react-router-dom';
 
-const AdminLayout = ({children}) => {
+const AdminLayout = (props) => {
+    console.log(props);
     const handleClick = (e) => {
         let items = document.querySelectorAll('[data-item]')
         items.forEach(item => item.classList.remove(style.admin__item__active))
@@ -21,22 +29,28 @@ const AdminLayout = ({children}) => {
                     <img src={adminLogo} alt="admin panel" />
                     <p>Admin Panel</p>
                 </div>
-                <div className={style.admin__item} data-item='true' onClick={handleClick}>
-                    <img src={menuIcon} alt="icon" />
-                    <p>Menu </p>
-                </div>
-                <div className={style.admin__item} data-item='true' onClick={handleClick}>
-                    <img src={newsIcon} alt="icon" />
-                    <p>News </p>
-                </div>
-                <div className={style.admin__item} data-item='true' onClick={handleClick}>
-                    <img src={messagesIcon} alt="icon" />
-                    <p>Messages</p>
-                </div>
+                <Link to={'/admin'}>
+                    <div className={style.admin__item + ' ' + style.admin__item__active} data-item='true' onClick={handleClick}>
+                        <img src={menuIcon} alt="icon" />
+                        <p>Menu </p>
+                    </div>
+                </Link>
+                <Link to={'/admin/news'}>
+                    <div className={style.admin__item} data-item='true' onClick={handleClick}>
+                        <img src={newsIcon} alt="icon" />
+                        <p>News </p>
+                    </div>
+                </Link>
+                <Link to={'/admin/messages'}>
+                    <div className={style.admin__item} data-item='true' onClick={handleClick}>
+                        <img src={messagesIcon} alt="icon" />
+                        <p>Messages</p>
+                    </div>
+                </Link>
             </div>
-            <div>
+            <div className={style.admin__container}>
                 {
-                    children
+                    <Outlet />
                 }
             </div>
         </div>
