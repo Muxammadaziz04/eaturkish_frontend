@@ -6,12 +6,6 @@ import newsIcon from '../../../assets/settings.svg'
 import messagesIcon from '../../../assets/plus-circle.svg'
 
 import style from './Layout.module.scss'
-import Item from '../FoodItem';
-import PostItem from '../NewsItem';
-import News from '../News';
-import Foods from '../Foods';
-import FoodUpload from '../FoodUpload';
-import NewsUpload from '../NewsUpload';
 import { Link, Outlet } from 'react-router-dom';
 
 const AdminLayout = (props) => {

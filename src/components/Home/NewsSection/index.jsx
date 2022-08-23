@@ -20,7 +20,7 @@ const NewsSection = () => {
             .then(res => res.json())
             .then(res => setNews(res.data))
             .catch(err => alert(err))
-    }, [host]);
+    }, []);
 
     return (
         <section className={style.section}>

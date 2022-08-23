@@ -8,7 +8,7 @@ import style from './TestimonySection.module.scss'
 
 const TestimonySection = () => {
     const [messages, setMessages] = useState([])
-    const [page, setPage] = useState(1)
+    const [page] = useState(1)
 
     // const changePage = () => {
     //     setPage(state => state + 1)

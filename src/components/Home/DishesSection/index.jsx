@@ -29,7 +29,7 @@ const DishesSection = () => {
             .then(res => res.json())
             .then(res => setMenu(res.data))
             .catch(err => alert(err))
-    }, [host]);
+    }, []);
 
     return (
         <section className={style.section}>
