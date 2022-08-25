@@ -14,6 +14,7 @@ const NewsUpload = () => {
     const [loading, setLoading] = useState(false)
     const [news, setNews] = useState([])
     const [img, setImage] = useState(news?.news_img || false)
+    const token = JSON.parse(localStorage.getItem('token')) || ''
 
     useEffect(() => {
         if (news_id) {
@@ -34,7 +35,7 @@ const NewsUpload = () => {
         fd.append('news_title', form.title.value)
         fd.append('news_desc', form.desc.value)
 
-        const options = { method: 'POST', body: fd }
+        const options = { method: 'POST', body: fd, headers: {token} }
 
         setLoading(true)
 

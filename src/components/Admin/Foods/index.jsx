@@ -30,7 +30,7 @@ const Foods = () => {
             <div className={style.foods__container}>
                 <div>
                     {
-                        menu?.length > 0 && menu.map(menu => <FoodItem food={menu} key={menu.food_id} func={deleteItem}/>)
+                        menu?.length > 0 && menu.map(menu => <FoodItem food={menu} key={menu.food_id} func={deleteItem} />)
                     }
                 </div>
             </div>

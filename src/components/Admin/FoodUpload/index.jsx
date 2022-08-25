@@ -15,6 +15,7 @@ const FoodUpload = () => {
     const [loading, setLoading] = useState(false)
     const [categories, setCategories] = useState([])
     const [img, setImage] = useState(food?.food_img || false)
+    const token = JSON.parse(localStorage.getItem('token')) || ''
 
     useEffect(() => {
         if (food_id) {
@@ -43,7 +44,7 @@ const FoodUpload = () => {
         fd.append('food_price', form.price.value)
         fd.append('food_category', form.category.value)
 
-        const options = { method: 'POST', body: fd }
+        const options = { method: 'POST', body: fd, headers: {token} }
 
         setLoading(true)
 

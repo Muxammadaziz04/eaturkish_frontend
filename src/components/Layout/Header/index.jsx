@@ -26,7 +26,9 @@ const Header = () => {
                     <li><Link to={'contact'}>Contact Us</Link></li>
                 </ul>
 
-                <button onClick={handleClick} className={style.nav__btn}>Log in</button>
+                <Link to={'/admin'}>
+                    <button onClick={handleClick} className={style.nav__btn}>Log in</button>
+                </Link>
             </div>
         </nav>
     );

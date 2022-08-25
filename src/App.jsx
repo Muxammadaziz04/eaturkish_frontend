@@ -13,6 +13,7 @@ import AdminFoods from './components/Admin/Foods';
 import Messages from './components/Admin/Messages';
 import FoodUpload from './components/Admin/FoodUpload';
 import NewsUpload from './components/Admin/NewsUpload';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path='newsupload' element={<NewsUpload />} />
           <Route path='newsupload/:news_id' element={<NewsUpload />} />
         </Route>
+        <Route path='/login' element={<Login />} />
       </Routes>
     </BrowserRouter>
   )

@@ -6,10 +6,15 @@ import newsIcon from '../../../assets/settings.svg'
 import messagesIcon from '../../../assets/plus-circle.svg'
 
 import style from './Layout.module.scss'
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, Navigate } from 'react-router-dom';
 
-const AdminLayout = (props) => {
-    console.log(props);
+const AdminLayout = () => {
+    const token = JSON.parse(localStorage.getItem('token') || null)
+  
+    if (!token) {
+        return <Navigate to='/login' />
+    }
+
     const handleClick = (e) => {
         let items = document.querySelectorAll('[data-item]')
         items.forEach(item => item.classList.remove(style.admin__item__active))
